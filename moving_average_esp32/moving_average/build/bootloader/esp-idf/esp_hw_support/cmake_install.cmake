@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader/esp-idf/esp_hw_support/port/esp32c6/cmake_install.cmake")
+  include("C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader/esp-idf/esp_hw_support/port/esp32c6/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader/esp-idf/esp_hw_support/lowpower/cmake_install.cmake")
+  include("C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader/esp-idf/esp_hw_support/lowpower/cmake_install.cmake")
 endif()
 

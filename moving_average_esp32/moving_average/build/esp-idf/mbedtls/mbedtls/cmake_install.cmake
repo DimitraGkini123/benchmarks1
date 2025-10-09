@@ -39,10 +39,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
-  include("C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/esp-idf/mbedtls/mbedtls/pkgconfig/cmake_install.cmake")
+  include("C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/esp-idf/mbedtls/mbedtls/pkgconfig/cmake_install.cmake")
 
 endif()
 

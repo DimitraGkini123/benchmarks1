@@ -3,4 +3,4 @@ source "C:/Users/Dimitra/esp/v5.5.1/esp-idf/components/esp_app_format/Kconfig.pr
 source "C:/Users/Dimitra/esp/v5.5.1/esp-idf/components/esp_rom/Kconfig.projbuild"
 source "C:/Users/Dimitra/esp/v5.5.1/esp-idf/components/esptool_py/Kconfig.projbuild"
 source "C:/Users/Dimitra/esp/v5.5.1/esp-idf/components/partition_table/Kconfig.projbuild"
-source "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/main/Kconfig.projbuild"
+source "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/main/Kconfig.projbuild"

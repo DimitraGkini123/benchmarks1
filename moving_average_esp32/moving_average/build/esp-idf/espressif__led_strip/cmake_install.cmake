@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/managed_components/espressif__led_strip
+# Install script for directory: C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/managed_components/espressif__led_strip
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

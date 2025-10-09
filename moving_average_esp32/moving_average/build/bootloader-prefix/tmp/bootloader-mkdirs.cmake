@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Users/Dimitra/esp/v5.5.1/esp-idf/components/bootloader/subproj
   file(MAKE_DIRECTORY "C:/Users/Dimitra/esp/v5.5.1/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader"
-  "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix"
-  "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix/tmp"
-  "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix/src"
-  "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader"
+  "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix"
+  "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix/tmp"
+  "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix/src"
+  "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

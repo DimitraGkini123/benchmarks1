@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:\Users\Dimitra\Desktop\thesis\moving_average\moving_average\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: C:\Users\Dimitra\Desktop\benchmarks1\moving_average_esp32\moving_average\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 

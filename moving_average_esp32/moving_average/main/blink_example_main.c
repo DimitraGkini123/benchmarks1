@@ -2,24 +2,12 @@
 #include <math.h>
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "esp_cpu.h"
+#include "esp_clk_tree.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
 static const char *TAG = "BENCH";
-
-// --- Inline functions to read RISC-V hardware counters ---
-/*static inline uint64_t read_cycle(void) {
-    uint64_t value;
-    __asm__ volatile ("csrr %0, mcycle" : "=r"(value));
-    return value;
-}
-static inline uint64_t read_instret(void) {
-    uint64_t value;
-    __asm__ volatile ("csrr %0, minstret" : "=r"(value));
-    return value;
-}
-*/
-
 
 // --- Moving average filter ---
 static void moving_average_filter(const double *in, double *out, size_t len, int M)
@@ -34,7 +22,8 @@ static void moving_average_filter(const double *in, double *out, size_t len, int
 }
 
 // --- Simple heart-rate estimation from peaks ---
-static double compute_hr(const double *x, size_t len, double fs, double thr){
+static double compute_hr(const double *x, size_t len, double fs, double thr)
+{
     if (!x || len < 3 || fs <= 0.0) return 0.0;
     int peaks = 0;
     for (size_t i = 1; i + 1 < len; i++) {
@@ -49,39 +38,51 @@ static double compute_hr(const double *x, size_t len, double fs, double thr){
     return dur > 0 ? (peaks / dur) * 60.0 : 0.0;
 }
 
+// --- Test data ---
 static double x[100];
 static double y[100];
+
 void app_main(void)
 {
-    ESP_LOGI(TAG, "Starting software benchmark (time-based)...");
+    ESP_LOGI(TAG, "Starting benchmark build at %s %s", __DATE__, __TIME__);
 
-    // Simulated PPG signal
     const size_t LEN = 100;
     const int M = 5;
-    const double FS = 50.0;   // Sampling frequency
-    const double TH = 0.6;    // Peak threshold
+    const double FS = 50.0;
+    const double TH = 0.6;
 
     for (size_t i = 0; i < LEN; i++) {
         x[i] = 0.5 + 0.5 * sin(2 * M_PI * i / 50.0);
     }
 
-    // Start benchmark timer
+    // --- Get CPU frequency ---
+    uint32_t freq_hz = 0;
+    esp_clk_tree_src_get_freq_hz(SOC_MOD_CLK_CPU, ESP_CLK_TREE_SRC_FREQ_PRECISION_EXACT, &freq_hz);
+    double freq_mhz = freq_hz / 1e6;
+
+    // --- Start timers ---
+    uint32_t start_cycles = esp_cpu_get_cycle_count();
     uint64_t start_us = esp_timer_get_time();
 
-    // Run computations
+    // --- Run computations ---
     moving_average_filter(x, y, LEN, M);
     double hr = compute_hr(y, LEN, FS, TH);
 
-    // Stop timer
+    // --- Stop timers ---
+    uint32_t end_cycles = esp_cpu_get_cycle_count();
     uint64_t end_us = esp_timer_get_time();
-    double elapsed_ms = (end_us - start_us) / 1000.0;
 
-    // Print results
+    uint32_t diff_cycles = end_cycles - start_cycles;
+    double elapsed_ms = (end_us - start_us) / 1000.0;
+    double elapsed_us_from_cycles = diff_cycles / freq_mhz;
+
+    // --- Results ---
     ESP_LOGI(TAG, "Benchmark done!");
     ESP_LOGI(TAG, "Estimated heart rate = %.2f bpm", hr);
     ESP_LOGI(TAG, "Execution time = %.3f ms", elapsed_ms);
+    ESP_LOGI(TAG, "CPU cycles = %u", diff_cycles);
+    ESP_LOGI(TAG, "≈ %.3f us (from cycles @ %.1f MHz)", elapsed_us_from_cycles, freq_mhz);
 
-    // Loop to keep task alive
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(2000));
     }

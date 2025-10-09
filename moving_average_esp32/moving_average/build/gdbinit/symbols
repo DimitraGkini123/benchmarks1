@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/bootloader/bootloader.elf
+    add-symbol-file C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Users/Dimitra/Desktop/thesis/moving_average/moving_average/build/moving_average.elf
+file C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build/moving_average.elf
