@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/CMakeFiles/bootloader
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/CMakeFiles/bootloader.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/CMakeFiles/bootloader-complete.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/Dimitra/Desktop/benchmarks1/low_pass_esp32/low_pass/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
