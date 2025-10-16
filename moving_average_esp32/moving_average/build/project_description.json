@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "moving_average",
-    "project_version":    "b61bef9-dirty",
+    "project_version":    "58a339a-dirty",
     "project_path":       "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average",
     "idf_path":           "C:/Users/Dimitra/esp/v5.5.1/esp-idf",
     "build_dir":          "C:/Users/Dimitra/Desktop/benchmarks1/moving_average_esp32/moving_average/build",
@@ -11,7 +11,7 @@
     "app_elf":            "moving_average.elf",
     "app_bin":            "moving_average.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.5.1",
+    "git_revision":       "v5.5.1-dirty",
     "target":             "esp32c6",
     "rev":                "",
     "min_rev":            "0",
