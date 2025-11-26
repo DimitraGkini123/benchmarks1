@@ -102,7 +102,9 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "Starting benchmark build at %s %s", __DATE__, __TIME__);
 
-    enable_flash_monitor();  // <-- Ενεργοποιεί MSPI monitor
+    enable_flash_monitor();  //καλείται μια φορά για να ενεργοποιήσω το interrupt.
+                            // από εκεί και πέρα κάθε φορά ππυ το hardware πάει στην flash, ενεργοποιείται το interrupt
+                            // και η συναρτησή μου spi0_isr() καλείται αυτόματα. άρα μετράω τα flash accesses.
 
     const size_t LEN = 100;
     const int M = 20;
