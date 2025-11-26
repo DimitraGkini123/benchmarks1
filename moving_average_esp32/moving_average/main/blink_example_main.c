@@ -35,12 +35,12 @@ static void IRAM_ATTR spi0_isr(void *arg)
 static void IRAM_ATTR enable_flash_monitor(void)
 {
     REG_WRITE(SPI_MEM_INT_CLR_REG(0), SPI_MEM_MST_ST_END_INT_CLR_M);
-    REG_SET_BIT(SPI_MEM_INT_ENA_REG(0), SPI_MEM_MST_ST_END_INT_ENA_M);
+    REG_SET_BIT(SPI_MEM_INT_ENA_REG(0), SPI_MEM_MST_ST_END_INT_ENA_M); //όποτε πραγματοποιείται μια μεταφορά στνην flash --> προκαλείται interrupt.
 
     esp_err_t err = esp_intr_alloc(
-        ETS_MSPI_INTR_SOURCE,
-        ESP_INTR_FLAG_IRAM | ESP_INTR_FLAG_LEVEL3,   // ✅ Critical: IRAM flag
-        spi0_isr,
+        ETS_MSPI_INTR_SOURCE,  //MSPI flash controller tou esp
+        ESP_INTR_FLAG_IRAM | ESP_INTR_FLAG_LEVEL3,   // Critical: IRAM flag
+        spi0_isr, //η δικιά μου συνάρτηση που θα καλέσει η CPU κάθε φορά μου συμβαίνει το event.
         NULL,
         NULL
     );
